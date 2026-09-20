@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nify Trading Ltd. — Freedom Mobile retail partner serving Surrey, British Columbia. Wireless plans, mobile devices, activations, upgrades and in-person support.">
+  <meta name="theme-color" content="#07131f">
+  <title>Locations | Nify Trading Ltd.</title>
+  <link rel="stylesheet" href="style.css">
+
+
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Nify Trading home">
+      <img src="images/Logo.png" alt="Nify Trading Ltd.">
+      <span>
+        <strong>NIFY TRADING</strong>
+        <small>FREEDOM MOBILE RETAIL PARTNER</small>
+      </span>
+    </a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="promotions.html">Promotions</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section id="locations" class="section locations-section">
+      <div class="container">
+        <div class="section-kicker">03 / Visit us</div>
+        <div class="section-heading">
+          <h2>Three Surrey <span>Locations</span></h2>
+          <p>
+            Visit any of our Surrey retail locations for wireless plans, mobile devices,
+            activations, upgrades and in-person customer support.
+          </p>
+        </div>
+
+        <div class="location-grid">
+          <article class="location-card">
+            <div class="store-gallery">
+
+  <img src="images/Cedar-Front.jpeg"
+       class="active"
+       alt="Cedar Hills Plaza storefront">
+
+  <img src="images/Cedar-inside.jpeg"
+       alt="Inside Cedar Hills Plaza">
+
+  <button class="gallery-arrow gallery-prev" onclick="changeImage(this, -1)">‹</button>
+  <button class="gallery-arrow gallery-next" onclick="changeImage(this, 1)">›</button>
+
+  <div class="gallery-counter">1 / 2</div>
+
+</div>
+            <div class="location-body">
+              <div class="location-number">01</div>
+              <h3>Cedar Hills Plaza</h3>
+              <p>12830 96 Ave, Unit 8A<br>Surrey, BC V3V 6A8</p>
+              <div class="location-actions">
+                <a href="https://www.google.com/maps/search/?api=1&query=12830+96+Ave+Surrey+BC+V3V+6A8" target="_blank" rel="noopener">Directions ↗</a>
+                <a href="tel:+16043854460">Call</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="store-gallery">
+
+  <img src="images/SouthSurrey-Front.jpeg"
+       class="active"
+       alt="Grandview Central storefront">
+
+  <img src="images/SouthSurrey-inside.jpeg"
+       alt="Inside Grandview Central">
+
+  
+
+  <button class="gallery-arrow gallery-prev" onclick="changeImage(this, -1)">‹</button>
+  <button class="gallery-arrow gallery-next" onclick="changeImage(this, 1)">›</button>
+
+  <div class="gallery-counter">1 / 2</div>
+
+</div>
+            <div class="location-body">
+              <div class="location-number">02</div>
+              <h3>Grandview Central</h3>
+              <p>16050 24 Ave #160<br>Surrey, BC V3Z 0R5</p>
+              <div class="location-actions">
+                <a href="https://www.google.com/maps/search/?api=1&query=16050+24+Ave+Surrey+BC" target="_blank" rel="noopener">Directions ↗</a>
+                <a href="tel:+16044986500">Call</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="location-card">
+            <div class="store-gallery">
+
+  <img src="images/Fleetwood-Front.jpeg"
+       class="active"
+       alt="Fraser Highway storefront">
+
+  <img src="images/Fleetwood-inside.jpeg"
+       alt="Inside Fraser Highway store">
+
+  <button class="gallery-arrow gallery-prev" onclick="changeImage(this, -1)">‹</button>
+  <button class="gallery-arrow gallery-next" onclick="changeImage(this, 1)">›</button>
+
+  <div class="gallery-counter">1 / 2</div>
+
+</div>
+            <div class="location-body">
+              <div class="location-number">03</div>
+              <h3>Fraser Highway</h3>
+              <p>15180 Fraser Hwy<br>Surrey, BC V3R 3P1</p>
+              <div class="location-actions">
+                <a href="https://www.google.com/maps/search/?api=1&query=15180+Fraser+Hwy+Surrey+BC" target="_blank" rel="noopener">Directions ↗</a>
+                <a href="tel:+17782932500">Call</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>NIFY TRADING LTD.</strong>
+        <p>Freedom Mobile retail partner · Surrey, British Columbia</p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="locations.html">Locations</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <small>© <span id="year"></span> Nify Trading Ltd. All rights reserved.</small>
+    </div>
+  </footer>
+<script src="script.js"></script>
+
+<script>
+function changeImage(button, direction) {
+
+  const gallery = button.closest(".store-gallery");
+  const images = gallery.querySelectorAll("img");
+  const counter = gallery.querySelector(".gallery-counter");
+
+  let currentIndex = 0;
+
+  images.forEach((image, index) => {
+    if (image.classList.contains("active")) {
+      currentIndex = index;
+    }
+  });
+
+  images[currentIndex].classList.remove("active");
+
+  let newIndex = currentIndex + direction;
+
+  if (newIndex < 0) {
+    newIndex = images.length - 1;
+  }
+
+  if (newIndex >= images.length) {
+    newIndex = 0;
+  }
+
+  images[newIndex].classList.add("active");
+
+  counter.textContent = (newIndex + 1) + " / " + images.length;
+}
+</script>
+
+</body>
+</html>

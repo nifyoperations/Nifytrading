@@ -1,0 +1,2312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Customer reviews for Nify Trading Ltd. retail locations in Surrey, British Columbia.">
+  <meta name="theme-color" content="#07131f">
+  <title>Reviews | Nify Trading Ltd.</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+body.reviews-main {
+  --review-navy: #142230;
+  --review-orange: #ff641d;
+  --review-orange-light: #fff1e9;
+  --review-background: #f5f7f9;
+  --review-white: #ffffff;
+  --review-border: #e1e6eb;
+  --review-text-light: #667789;
+  --review-muted: #8996a3;
+  --review-star: #f8b51b;
+}
+
+.reviews-main { background: var(--review-background); }
+
+/* =========================================================
+           MAIN
+        ========================================================= */
+
+        .reviews-page {
+            width: min(var(--max), calc(100% - 40px));
+
+            margin: auto;
+
+            padding: 90px 0 105px;
+        }
+
+
+        /* =========================================================
+           PAGE INTRO
+        ========================================================= */
+
+        .section-label {
+            color: #60788d;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 20px;
+        }
+
+        .intro {
+            display: grid;
+
+            grid-template-columns: 1.15fr 0.85fr;
+
+            gap: 70px;
+
+            align-items: end;
+
+            margin-bottom: 75px;
+        }
+
+        .page-title {
+            font-size: clamp(48px, 6vw, 76px);
+
+            line-height: 0.98;
+
+            letter-spacing: -3px;
+
+            font-weight: 800;
+        }
+
+        .page-title span {
+            color: var(--review-orange);
+        }
+
+        .intro-text {
+            color: var(--review-text-light);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            max-width: 540px;
+        }
+
+
+        /* =========================================================
+           LOCATION SECTION
+        ========================================================= */
+
+        .location-section {
+            margin-bottom: 100px;
+        }
+
+
+        /* =========================================================
+           LOCATION HEADER
+        ========================================================= */
+
+        .location-header {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            margin-bottom: 35px;
+        }
+
+        .location-heading {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .location-icon {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 14px;
+
+            background: var(--review-orange-light);
+
+            color: var(--review-orange);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 22px;
+        }
+
+        .location-name {
+            font-size: 32px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.8px;
+        }
+
+        .location-address {
+            color: var(--review-text-light);
+
+            font-size: 14px;
+
+            margin-top: 2px;
+        }
+
+
+        /* =========================================================
+           RATING BOX
+        ========================================================= */
+
+        .location-rating {
+            background: var(--review-white);
+
+            border: 1px solid var(--review-border);
+
+            border-radius: 20px;
+
+            padding: 18px 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            box-shadow:
+                0 6px 20px rgba(20, 34, 48, 0.04);
+        }
+
+        .rating-number {
+            font-size: 36px;
+
+            line-height: 1;
+
+            font-weight: 800;
+        }
+
+        .rating-stars {
+            color: var(--review-star);
+
+            font-size: 20px;
+
+            letter-spacing: 1px;
+        }
+
+        .rating-count {
+            color: var(--review-text-light);
+
+            font-size: 12px;
+
+            margin-top: 2px;
+        }
+
+
+        /* =========================================================
+           GOOGLE BUTTON
+        ========================================================= */
+
+        .google-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-bottom: 35px;
+
+            padding: 12px 20px;
+
+            background: white;
+
+            border: 1px solid var(--review-border);
+
+            border-radius: 25px;
+
+            color: #4285f4;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .google-button:hover {
+            background: var(--review-navy);
+
+            border-color: var(--review-navy);
+
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+        .google-letter {
+            font-size: 18px;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================================================
+           REVIEWS GRID
+        ========================================================= */
+
+        .reviews-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 24px;
+        }
+
+
+        /* =========================================================
+           REVIEW CARD
+        ========================================================= */
+
+        .review-card {
+            background: white;
+
+            border: 1px solid var(--review-border);
+
+            border-radius: 22px;
+
+            padding: 28px;
+
+            min-height: 305px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            box-shadow:
+                0 7px 25px rgba(20, 34, 48, 0.045);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        /* =========================================================
+           CUSTOMER
+        ========================================================= */
+
+        .review-top {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 18px;
+        }
+
+        .customer {
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+        .avatar {
+            width: 46px;
+            height: 46px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: 700;
+
+            flex-shrink: 0;
+        }
+
+        .purple {
+            background: #6535c7;
+        }
+
+        .blue {
+            background: #168bc4;
+        }
+
+        .green {
+            background: #65a538;
+        }
+
+        .orange {
+            background: #f46b1b;
+        }
+
+        .red {
+            background: #d94730;
+        }
+
+        .teal {
+            background: #147f78;
+        }
+
+        .pink {
+            background: #d43b77;
+        }
+
+        .brown {
+            background: #82553f;
+        }
+
+        .customer-name {
+            font-size: 16px;
+
+            font-weight: 750;
+
+            line-height: 1.2;
+        }
+
+        .customer-meta {
+            color: var(--review-muted);
+
+            font-size: 12px;
+
+            margin-top: 3px;
+        }
+
+
+        /* =========================================================
+           REVIEW TEXT
+        ========================================================= */
+
+        .review-rating {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 13px;
+        }
+
+        .stars {
+            color: var(--review-star);
+
+            font-size: 18px;
+
+            letter-spacing: 1px;
+        }
+
+        .review-date {
+            color: var(--review-muted);
+
+            font-size: 12px;
+        }
+
+        .review-text {
+            color: #394b5b;
+
+            font-size: 15px;
+
+            line-height: 1.7;
+
+            flex-grow: 1;
+        }
+
+
+        /* =========================================================
+           REVIEW FOOTER
+        ========================================================= */
+
+        .review-footer {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            border-top: 1px solid #edf0f3;
+
+            padding-top: 16px;
+
+            margin-top: 20px;
+        }
+
+        .google-word {
+            font-size: 16px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+        }
+
+        .g-blue {
+            color: #4285f4;
+        }
+
+        .g-red {
+            color: #ea4335;
+        }
+
+        .g-yellow {
+            color: #fbbc05;
+        }
+
+        .g-green {
+            color: #34a853;
+        }
+
+        .view-google {
+            color: var(--review-text-light);
+
+            font-size: 12px;
+
+            font-weight: 650;
+        }
+
+        .view-google:hover {
+            color: var(--review-orange);
+        }
+
+
+        /* =========================================================
+           DIVIDER
+        ========================================================= */
+
+        .location-divider {
+            height: 1px;
+
+            background: var(--review-border);
+
+            margin-top: 100px;
+        }
+
+
+        /* =========================================================
+           FINAL CTA
+        ========================================================= */
+
+        .final-cta {
+            background: var(--review-navy);
+
+            border-radius: 28px;
+
+            padding: 55px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            margin-top: 20px;
+        }
+
+        .final-cta h2 {
+            color: white;
+
+            font-size: 31px;
+
+            margin-bottom: 8px;
+        }
+
+        .final-cta p {
+            color: #aebbc7;
+
+            font-size: 15px;
+        }
+
+        .final-button {
+            background: white;
+
+            color: var(--review-navy);
+
+            padding: 14px 24px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            font-weight: 750;
+
+            white-space: nowrap;
+
+            transition: 0.2s ease;
+        }
+
+        .final-button:hover {
+            background: var(--review-orange);
+
+            color: white;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+.intro {
+                grid-template-columns: 1fr;
+
+                gap: 25px;
+            }
+
+            .reviews-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+            }
+        }
+
+
+        @media (max-width: 750px) {
+.reviews-page {
+                width: min(var(--max), calc(100% - 28px));
+
+                padding-top: 65px;
+            }
+
+            .page-title {
+                font-size: 48px;
+
+                letter-spacing: -2px;
+            }
+
+            .location-header {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .location-rating {
+                width: 100%;
+            }
+
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                min-height: auto;
+            }
+
+            .final-cta {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 35px 25px;
+            }
+
+            .final-cta h2 {
+                font-size: 25px;
+            }
+        }
+
+    
+  </style>
+</head>
+<body class="reviews-main">
+
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Nify Trading home">
+      <img src="images/Logo.png" alt="Nify Trading Ltd.">
+      <span>
+        <strong>NIFY TRADING</strong>
+        <small>FREEDOM MOBILE RETAIL PARTNER</small>
+      </span>
+    </a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="promotions.html">Promotions</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="reviews-page">
+
+
+    <!-- =====================================================
+         INTRO
+    ====================================================== -->
+
+    <div class="section-label">
+        07 / CUSTOMER EXPERIENCE
+    </div>
+
+
+    <section class="intro">
+
+        <h1 class="page-title">
+            What our customers<br>
+            <span>say.</span>
+        </h1>
+
+
+        <p class="intro-text">
+
+            Every store has its own customers, team and
+            experiences. Explore genuine feedback from
+            customers who have visited our locations.
+
+        </p>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FLEETWOOD
+    ====================================================== -->
+
+    <section class="location-section">
+
+
+        <div class="location-header">
+
+            <div>
+
+                <div class="location-heading">
+
+                    <div class="location-icon">
+                        📍
+                    </div>
+
+                    <div>
+
+                        <h2 class="location-name">
+                            Fleetwood
+                        </h2>
+
+                        <p class="location-address">
+                            15180 Fraser Hwy, Surrey, BC V3R 3P1
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="location-rating">
+
+                <div class="rating-number">
+                    4.4
+                </div>
+
+                <div>
+
+                    <div class="rating-stars">
+                        ★★★★★
+                    </div>
+
+                    <div class="rating-count">
+                        126 Google Reviews
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Google link supplied by user -->
+
+        <a
+            href="https://www.google.com/search?q=freedom+mobile+152+fraser+highway"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="google-button"
+        >
+
+            <span class="google-letter">
+                G
+            </span>
+
+            View all Fleetwood reviews on Google →
+
+        </a>
+
+
+        <div class="reviews-grid">
+
+
+            <!-- Albina -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar purple">
+                            A
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Albina Yousufzai
+                            </div>
+
+                            <div class="customer-meta">
+                                1 review
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        3 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    I had a wonderful experience at Freedom
+                    Mobile thanks to Simar. She was extremely
+                    professional, patient, and kind throughout
+                    our visit. She took the time to explain
+                    everything clearly and helped us find the
+                    best option for our needs...
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Daniela -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar pink">
+                            D
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Daniela Cruz
+                            </div>
+
+                            <div class="customer-meta">
+                                2 reviews · 1 photo
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        3 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Great experience! I upgraded my phone,
+                    and the staff were incredibly kind, patient,
+                    and helpful throughout the process. They
+                    helped me transfer everything from my old
+                    phone to my new one and explained everything
+                    clearly...
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Maryam -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar blue">
+                            M
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Maryam Srosh
+                            </div>
+
+                            <div class="customer-meta">
+                                4 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        3 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    We recently visited Freedom Mobile and had
+                    the pleasure of being helped by Simar. She was
+                    incredibly kind, patient, and knowledgeable
+                    throughout the experience...
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Helen -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar purple">
+                            H
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Helen Peng
+                            </div>
+
+                            <div class="customer-meta">
+                                3 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        a month ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    I had a great experience here today. Jessi
+                    was extremely knowledgeable and patient,
+                    helping me choose the best phone plan and
+                    setting everything up. Excellent customer
+                    service!
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Mohit -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar purple">
+                            M
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Mohit Sharma
+                            </div>
+
+                            <div class="customer-meta">
+                                2 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        3 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    I had a great experience with Simar at
+                    Freedom Mobile. She was friendly, patient,
+                    and very helpful in answering all my
+                    questions. Really appreciate her excellent
+                    customer service.
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Farhad -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar orange">
+                            F
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Farhad
+                            </div>
+
+                            <div class="customer-meta">
+                                Local Guide · 277 reviews · 811 photos
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        5 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    I went in just before Christmas, early
+                    Boxing Day sale. Lady who helped me was
+                    very good, got the phone I wanted, helped
+                    me wipe my old phone and set up my new
+                    phone. 5 out of 5 for service!
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <div class="location-divider"></div>
+
+
+
+    <!-- =====================================================
+         SOUTH SURREY
+    ====================================================== -->
+
+    <section class="location-section">
+
+
+        <div class="location-header">
+
+            <div class="location-heading">
+
+                <div class="location-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <h2 class="location-name">
+                        South Surrey
+                    </h2>
+
+                    <p class="location-address">
+                        Grandview Central Shopping Centre · 24 Avenue #160
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="location-rating">
+
+                <div class="rating-number">
+                    4.6
+                </div>
+
+                <div>
+
+                    <div class="rating-stars">
+                        ★★★★★
+                    </div>
+
+                    <div class="rating-count">
+                        285 Google Reviews
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://www.google.com/search?q=Freedom+Mobile%2C+Grandview+Central+Shopping+Centre%2C+24+Avenue+%23160%2C+Surrey%2C+BC"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="google-button"
+        >
+
+            <span class="google-letter">
+                G
+            </span>
+
+            View all South Surrey reviews on Google →
+
+        </a>
+
+
+        <div class="reviews-grid">
+
+
+            <!-- Yasmin -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar purple">
+                            Y
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Yasmin Mobin
+                            </div>
+
+                            <div class="customer-meta">
+                                1 review
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        9 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Have the best service with Mehak all the
+                    time whenever we come to this location.
+                    She is extremely helpful always. Her
+                    personality is so appealing. I would always
+                    recommend anyone who needs good and fast
+                    service please do see Mehak.
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Asmin -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar green">
+                            A
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                asmin bano
+                            </div>
+
+                            <div class="customer-meta">
+                                2 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        a month ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Store service is great. We are coming here
+                    from last 5 years, we are really happy.
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Tiger -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar blue">
+                            T
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Tiger Danyliw
+                            </div>
+
+                            <div class="customer-meta">
+                                3 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        3 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Awesome service Mehak! Thanks for all your
+                    help!
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Vinay -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar blue">
+                            V
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Vinay kaushik
+                            </div>
+
+                            <div class="customer-meta">
+                                12 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        11 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    I visited last week, and Dhruv gave me a
+                    great deal on the iPhone 17 Pro. The
+                    customer service was excellent!
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Joie -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar red">
+                            J
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Joie Abunda
+                            </div>
+
+                            <div class="customer-meta">
+                                8 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        9 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Very helpful. They take time to help
+                    customer so I don't mind waiting for my
+                    turn. In return, they are taking time to
+                    help me with my needs and inquiry.
+                    Jennifer is very good in helping customer.
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Gurvinder -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar orange">
+                            G
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Gurvinder Singh
+                            </div>
+
+                            <div class="customer-meta">
+                                4 reviews · 2 photos
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        11 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Excellent service and gave me best deal.
+                    Also, provided me extra service as well
+                    including setting up my new phone and
+                    transferring data! Thanks to Simar she is
+                    so nice and she have very beautiful smile!!!
+                    Recommend visiting to this store!!
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Trimkeshwar -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar orange">
+                            T
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Trimbkeshwar Mittal
+                            </div>
+
+                            <div class="customer-meta">
+                                2 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        11 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    I've had a really good experience with
+                    them. The plans are fair and actually save
+                    me money. Coverage has been solid wherever
+                    I go, and the data works great. The staff
+                    are super friendly and easy to talk to
+                    whenever I need help!!
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Anmol -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar red">
+                            A
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Anmol Rattan Gupta
+                            </div>
+
+                            <div class="customer-meta">
+                                9 reviews · 1 photo
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        5 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Thankyou Mehak for the amazing service.
+                    I am definitely going to refer my friends
+                    to you. Keep doing the great work.
+                    👍 👍 👍
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="location-divider"></div>
+
+
+
+    <!-- =====================================================
+         CEDAR
+    ====================================================== -->
+
+    <section class="location-section">
+
+
+        <div class="location-header">
+
+            <div class="location-heading">
+
+                <div class="location-icon">
+                    📍
+                </div>
+
+                <div>
+
+                    <h2 class="location-name">
+                        Cedar
+                    </h2>
+
+                    <p class="location-address">
+                        12830 96 Avenue, Surrey, BC
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="location-rating">
+
+                <div class="rating-number">
+                    4.6
+                </div>
+
+                <div>
+
+                    <div class="rating-stars">
+                        ★★★★★
+                    </div>
+
+                    <div class="rating-count">
+                        291 Google Reviews
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="https://www.google.com/search?q=Freedom+Mobile%2C+12830+96+Avenue%2C+Surrey%2C+BC"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="google-button"
+        >
+
+            <span class="google-letter">
+                G
+            </span>
+
+            View all Cedar reviews on Google →
+
+        </a>
+
+
+        <div class="reviews-grid">
+
+
+            <!-- Karly -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar green">
+                            K
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Karly Laughlin
+                            </div>
+
+                            <div class="customer-meta">
+                                4 reviews · 4 photos
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        2 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    I can't say enough great things about my
+                    experience with Pooja! After years of
+                    frustration with another provider, I finally
+                    decided to switch to Freedom Mobile...
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Jaeden -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar purple">
+                            J
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Jaeden Sarmiento
+                            </div>
+
+                            <div class="customer-meta">
+                                6 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        2 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Had a great experience at Freedom Mobile
+                    thanks to Jesse. She provided excellent
+                    customer service from start to finish.
+                    She was friendly, patient, and took the
+                    time to answer all of my questions without
+                    making me feel rushed...
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Lynn -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar brown">
+                            L
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Lynn M
+                            </div>
+
+                            <div class="customer-meta">
+                                Local Guide · 32 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        6 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Pooja was the customer service rep at the
+                    Grandview Corners store and she was
+                    outstanding. We switched two phone lines
+                    from Rogers to Freedom mobile and it was
+                    all done while we were at the store with
+                    Pooja and able to guide us...
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Jasanta -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar purple">
+                            J
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Jasantha Iyappa
+                            </div>
+
+                            <div class="customer-meta">
+                                17 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        3 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    This Branch at Grandview Central South
+                    Surrey has given excellent service to my
+                    family & friends for over 3 years. Pooja has
+                    been amazing and goes above and beyond
+                    to help us, even past closing time. She is
+                    always pleasant, well updated on...
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Steve -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar orange">
+                            S
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Steve Slater
+                            </div>
+
+                            <div class="customer-meta">
+                                Local Guide · 9 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        5 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    We went to freedom mobile in South Surrey
+                    today, and spoke with Simar K. I have to say
+                    that it was a fantastic customer service
+                    experience! She was extremely helpful with
+                    the initial questions I had and then, after
+                    some change of mind...
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Jaspreet -->
+
+            <article class="review-card">
+
+                <div class="review-top">
+
+                    <div class="customer">
+
+                        <div class="avatar teal">
+                            J
+                        </div>
+
+                        <div>
+
+                            <div class="customer-name">
+                                Jaspreet Singh
+                            </div>
+
+                            <div class="customer-meta">
+                                3 reviews
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="review-rating">
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                    <span class="review-date">
+                        3 months ago
+                    </span>
+
+                </div>
+
+
+                <p class="review-text">
+                    Simar was very helpful to upgrade my phone.
+                    She knows how to deal with different people
+                    at the same time and provides great customer
+                    service. Very professional and patient!
+                </p>
+
+
+                <div class="review-footer">
+
+                    <span class="google-word">
+                        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+                    </span>
+
+                    <span class="view-google">
+                        Google Review
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="final-cta">
+
+        <div>
+
+            <h2>
+                Want to see more reviews?
+            </h2>
+
+            <p>
+                Visit our Google listings to explore
+                the complete customer feedback.
+            </p>
+
+        </div>
+
+
+        <a
+            href="https://www.google.com/search?q=freedom+mobile+152+fraser+highway"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="final-button"
+        >
+            Explore Google Reviews →
+        </a>
+
+    </section>
+
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>NIFY TRADING LTD.</strong>
+      <p>Freedom Mobile retail partner · Surrey, British Columbia</p>
+    </div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="locations.html">Locations</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <small>© <span id="year"></span> Nify Trading Ltd. All rights reserved.</small>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
